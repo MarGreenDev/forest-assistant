@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <div id="titlebar" class="font-bold">
+        <span>🌲 Forest Assistant</span>
+    </div>
+
+    <main class="flex-1">
+        <h1>Hello!</h1>
+        <p>Your assistant is running.</p>
+
+        <!-- quick links -->
+
+        <div class="bg-[#deb58a] text-center my-4 text-[#27130a]">
+            <h2 class="text-xl font-bold">Quick Links</h2>
+            <div class="grid grid-cols-3">
+                <a id="notion" class="cursor-pointer">Notion</a>
+                <a id="rooster" class="cursor-pointer">Rooster</a>
+                <a href="ms-outlook:">Outlook</a>
+                <a href="ms-teams:">Teams</a>
+                <a href="spotify:">Spotify</a>
+                <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
+            </div>
+        </div>
+
+        <!-- Focus timer -->
+
+        <div id="focustimer-container" class="text-center">
+            <h2 class="text-xl font-bold">Focus timer</h2>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-2">
+        <p>Small steps, big things</p>
+    </footer>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

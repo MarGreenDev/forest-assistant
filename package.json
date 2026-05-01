@@ -1,0 +1,15 @@
+{
+  "name": "assistant-app",
+  "version": "1.0.0",
+  "description": "Personal assistant",
+  "license": "ISC",
+  "author": "Marylou Groeneveld",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^41.4.0"
+  }
+}
