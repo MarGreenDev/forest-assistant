@@ -1,7 +1,10 @@
 body {
     margin: 0;
     font-family: monospace;
-    background: #27130a;
+    background-image: url(img/app-bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: pixelated;
     color: #d8f3dc;
 }
 
