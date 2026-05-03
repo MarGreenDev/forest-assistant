@@ -33,6 +33,14 @@ function updateClock() {
 updateClock(); //run once
 setInterval(updateClock, 1000); // update every second
 
+// typing counter
+
+let count = 0;
+window.addEventListener("keydown", () => {
+    count++;
+    document.getElementById("counter").textContent = count;
+})
+
 //get weather code from open-meteo api
 
 function getWeatherText(code) {
