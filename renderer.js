@@ -1,19 +1,65 @@
-const { shell } = require('electron');
-const fs = require('fs');
-const { json } = require('stream/consumers');
+const { shell } = require("electron");
+const fs = require("fs");
+const { json } = require("stream/consumers");
 
-const config = JSON.parse(
-    fs.readFileSync('config.json', 'utf-8')
-);
+const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
 
 function bindLink(id, url) {
-    const el = document.getElementById(id);
-    if (!el || !url) return;
+  const el = document.getElementById(id);
+  if (!el || !url) return;
 
-    el.addEventListener('click', () => {
-        shell.openExternal(url);
-    });
+  el.addEventListener("click", () => {
+    shell.openExternal(url);
+  });
 }
 
-bindLink('notion', config.notion);
-bindLink('rooster', config.rooster);
+bindLink("notion", config.notion);
+bindLink("rooster", config.rooster);
+
+function getWeatherText(code) {
+  if (code === 0) return "Clear sky";
+  if (code < 3) return "Partly cloudy";
+  if (code < 50) return "Cloudy";
+  if (code < 70) return "Rainy";
+  return "Stormy";
+}
+
+// Weather apeldoorn
+
+const latApeldoorn = 52.21;
+const lonApeldoorn = 5.97;
+
+fetch(
+  `https://api.open-meteo.com/v1/forecast?latitude=${latApeldoorn}&longitude=${lonApeldoorn}&current_weather=true`,
+)
+  .then((res) => res.json())
+  .then((data) => {
+    const tempApeldoorn = data.current_weather.temperature;
+    const windApeldoorn = data.current_weather.windspeed;
+    const codeApeldoorn = data.current_weather.weathercode;
+
+    const weatherTextApeldoorn = getWeatherText(codeApeldoorn);
+
+    document.getElementById("weather-apeldoorn").textContent =
+      `${tempApeldoorn}°C, wind ${windApeldoorn} km/h ${weatherTextApeldoorn}`;
+  });
+
+// Weather Utrecht
+
+const latUtrecht = 52.09;
+const lonUtrecht = 5.12;
+
+fetch(
+  `https://api.open-meteo.com/v1/forecast?latitude=${latUtrecht}&longitude=${lonUtrecht}&current_weather=true`,
+)
+  .then((res) => res.json())
+  .then((data) => {
+    const tempUtrecht = data.current_weather.temperature;
+    const windUtrecht = data.current_weather.windspeed;
+    const codeUtrecht = data.current_weather.weathercode;
+
+    const weatherTextUtrecht = getWeatherText(codeUtrecht);
+
+    document.getElementById("weather-utrecht").textContent =
+      `${tempUtrecht}°C, wind ${windUtrecht} km/h, ${weatherTextUtrecht}`;
+  });
