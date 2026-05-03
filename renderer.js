@@ -27,7 +27,7 @@ function updateClock() {
         second: '2-digit'
     });
 
-    document.getElementById("clock").textContent = time;
+    document.getElementById("clock").textContent = "Hi! the current time is: " + time;
 }
 
 updateClock(); //run once
@@ -39,16 +39,22 @@ let count = 0;
 window.addEventListener("keydown", () => {
     count++;
     document.getElementById("counter").textContent = count;
-})
+
+    frog.classList.add("jump");
+
+    setTimeout(() => {
+      frog.classList.remove("jump");
+    }, 150);
+});
 
 //get weather code from open-meteo api
 
 function getWeatherText(code) {
-  if (code === 0) return "Clear sky";
-  if (code < 3) return "Partly cloudy";
-  if (code < 50) return "Cloudy";
-  if (code < 70) return "Rainy";
-  return "Stormy";
+  if (code === 0) return "☀️";
+  if (code < 3) return "🌤️";
+  if (code < 50) return "☁️";
+  if (code < 70) return "🌧️";
+  return "⛈️";
 }
 
 // Weather apeldoorn

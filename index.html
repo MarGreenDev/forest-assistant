@@ -13,40 +13,61 @@
     </div>
 
     <main class="flex-1">
+      <div class="relative">
+        <!-- frog + clock here -->
+        <div class="absolute flex flex-col gap-5 left-50 top-10">
+          <p id="counter" class="text-center font-semibold">0</p>
+          <p id="frog" class="text-4xl">🐸</p>
+        </div>
 
-      <p id="clock"></p>
-      <p id="counter">0</p>
-
-      <div  class="mb-30">
-      <h1>Hello!</h1>
-      <p>Your assistant is running.</p>
+        <div
+          class="absolute bg-amber-50/80 text-[#27130a] rounded-lg h-25 w-40 text-center"
+        >
+          <p id="clock">Hi! The current time is:</p>
+        </div>
       </div>
 
       <!-- quick links -->
 
-      <div class="bg-[#deb58a] text-center my-4 text-[#27130a] rounded-lg border-4 border-solid">
-        <h2 class="text-xl font-bold">Quick Links</h2>
-        <div id="quick-links" class="grid grid-cols-3 justify-items-center items-center">
-          <a id="notion" class="cursor-pointer"><img src="img/book.png" alt="notion"></a>
-          <a id="rooster" class="cursor-pointer"><img src="img/calendar.png" alt="rooster"></a>
-          <a href="ms-outlook:"><img src="img/letter.png" alt="outlook"></a>
-          <a href="ms-teams:"><img src="img/teams.png" alt="teams"></a>
-          <a href="spotify:"><img src="img/spotify.png" alt="spotify"></a>
-          <a href="https://www.w3schools.com" target="_blank"><img src="img/folder.png" alt="folder"></a>
+      <div class="flex flex-col gap-5 mt-40">
+        <div
+          class="bg-[#deb58a] text-center text-[#27130a] rounded-lg border-4 border-solid"
+        >
+          <h2 class="text-xl font-bold">Quick Links</h2>
+          <div
+            id="quick-links"
+            class="grid grid-cols-3 justify-items-center items-center"
+          >
+            <a id="notion" class="cursor-pointer"
+              ><img src="img/book.png" alt="notion"
+            /></a>
+            <a id="rooster" class="cursor-pointer"
+              ><img src="img/calendar.png" alt="rooster"
+            /></a>
+            <a href="ms-outlook:"><img src="img/letter.png" alt="outlook" /></a>
+            <a href="ms-teams:"><img src="img/teams.png" alt="teams" /></a>
+            <a href="spotify:"><img src="img/spotify.png" alt="spotify" /></a>
+            <a href="https://www.w3schools.com" target="_blank"
+              ><img src="img/folder.png" alt="folder"
+            /></a>
+          </div>
+        </div>
+
+        <!-- weather -->
+
+        <div
+          id="weather-container"
+          class="bg-[#deb58a] text-center text-[#27130a] rounded-lg border-4 border-solid p-2"
+        >
+          <h2 class="text-lg font-bold">Weather</h2>
+          <label for="weather-apeldoorn" class="font-semibold"
+            >Apeldoorn:</label
+          >
+          <p id="weather-apeldoorn">Loading weather...</p>
+          <label for="weather-utrecht" class="font-semibold">Utrecht:</label>
+          <p id="weather-utrecht">Loading weather...</p>
         </div>
       </div>
-
-      <!-- weather -->
-
-      <div id="weather-container">
-        <h2 class="text-lg font-bold">Weather</h2>
-        <label for="weather-apeldoorn" class="font-semibold">Apeldoorn:</label>
-        <p id="weather-apeldoorn">Loading weather...</p>
-        <label for="weather-utrecht" class="font-semibold">Utrecht:</label>
-        <p id="weather-utrecht">Loading weather...</p>
-      </div>
-
-      
     </main>
 
     <footer class="text-center py-2">

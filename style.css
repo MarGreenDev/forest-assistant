@@ -43,3 +43,11 @@ button {
   justify-content: center;
   justify-items: center;
 }
+
+#frog {
+  transition: transform 0.15s ease;
+}
+
+#frog.jump {
+  transform: translateY(-10px);
+}
