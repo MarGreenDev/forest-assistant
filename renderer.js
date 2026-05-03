@@ -16,6 +16,25 @@ function bindLink(id, url) {
 bindLink("notion", config.notion);
 bindLink("rooster", config.rooster);
 
+// clock
+
+function updateClock() {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    document.getElementById("clock").textContent = time;
+}
+
+updateClock(); //run once
+setInterval(updateClock, 1000); // update every second
+
+//get weather code from open-meteo api
+
 function getWeatherText(code) {
   if (code === 0) return "Clear sky";
   if (code < 3) return "Partly cloudy";
