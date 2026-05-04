@@ -52,6 +52,15 @@ button {
   transform: translateY(-10px);
 }
 
+#speech-bubble {
+  background-image: url(img/speech-bubble.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+
 #clock {
   white-space: pre-line;
+  line-height: 2.4;
 }
