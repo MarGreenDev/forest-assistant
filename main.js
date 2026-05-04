@@ -20,7 +20,6 @@ function createWindow() {
     });
 
     win.loadFile('index.html');
-    win.setIcon(path.join(__dirname, 'favicon.ico'));
 
     win.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
