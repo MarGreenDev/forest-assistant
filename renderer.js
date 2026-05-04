@@ -1,8 +1,18 @@
-const { shell } = require("electron");
+const { shell, ipcRenderer } = require("electron");
 const fs = require("fs");
 const { json } = require("stream/consumers");
 
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+
+// minimize and close buttons
+
+document.getElementById('minimize-btn').addEventListener('click', () => {
+  ipcRenderer.send('minimize-window');
+});
+
+document.getElementById('close-btn').addEventListener('click', () => {
+  ipcRenderer.send('close-window');
+});
 
 function bindLink(id, url) {
   const el = document.getElementById(id);

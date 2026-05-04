@@ -1,4 +1,4 @@
-const { app, BrowserWindow, shell } = require('electron');
+const { app, BrowserWindow, shell, ipcMain } = require('electron');
 const path = require('path');
 
 function createWindow() {
@@ -19,15 +19,23 @@ function createWindow() {
         }
     });
 
+    ipcMain.on('minimize-window', () => {
+        win.minimize();
+    });
+    
+    ipcMain.on('close-window', () => {
+        win.close();
+    });
+    
     win.loadFile('index.html');
 
     win.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
     return { action: 'deny' };
+    
 });
 }
 
 app.whenReady().then(() => {
     createWindow();
 });
-

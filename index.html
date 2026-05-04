@@ -8,19 +8,24 @@
   </head>
 
   <body class="min-h-screen flex flex-col">
-    <div id="titlebar" class="font-bold">
+    <div id="titlebar" class="font-bold flex justify-between">
       <span>🌲 Forest Assistant</span>
+      <div class="flex gap-2">
+        <img id="minimize-btn" src="img/min-button.png" alt="minimize" />
+        <img id="close-btn" src="img/close-button.png" alt="close" />
+      </div>
     </div>
 
     <main class="flex-1">
       <div class="relative">
         <!-- frog + clock here -->
-        <div class="absolute flex flex-col left-45 top-5">
-          <img id="frog" src="img/frog2.png" alt="frog">
+        <div class="absolute flex flex-col left-45 top-3">
+          <img id="frog" src="img/frog2.png" alt="frog" />
           <p id="counter" class="text-center font-semibold">0</p>
         </div>
 
-        <div id="speech-bubble"
+        <div
+          id="speech-bubble"
           class="absolute text-[#27130a] h-26 w-42 text-center"
         >
           <p id="clock">Hi! The current time is:</p>
