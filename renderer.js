@@ -23,11 +23,16 @@ function updateClock() {
 
     const time = now.toLocaleTimeString([], {
         hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        minute: '2-digit'
     });
 
-    document.getElementById("clock").textContent = "Hi! the current time is: " + time;
+    const date = now.toLocaleDateString([], {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'short'
+    })
+
+    document.getElementById("clock").textContent = `Hi! It's ${time}\n${date}`;
 }
 
 updateClock(); //run once

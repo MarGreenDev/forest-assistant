@@ -51,3 +51,7 @@ button {
 #frog.jump {
   transform: translateY(-10px);
 }
+
+#clock {
+  white-space: pre-line;
+}
