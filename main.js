@@ -1,9 +1,11 @@
 const { app, BrowserWindow, shell } = require('electron');
+const path = require('path');
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 350,
         height: 600,
+        icon: path.join(__dirname, 'favicon.ico'),
         resizable: false,
 
         alwaysOnTop: true,
@@ -18,6 +20,7 @@ function createWindow() {
     });
 
     win.loadFile('index.html');
+    win.setIcon(path.join(__dirname, 'favicon.ico'));
 
     win.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
