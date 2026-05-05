@@ -65,12 +65,22 @@
           class="bg-[#deb58a] text-center text-[#27130a] rounded-lg border-4 border-solid p-2"
         >
           <h2 class="text-lg font-bold">Weather</h2>
-          <label for="weather-apeldoorn" class="font-semibold"
-            >Apeldoorn:</label
-          >
-          <p id="weather-apeldoorn">Loading weather...</p>
-          <label for="weather-utrecht" class="font-semibold">Utrecht:</label>
-          <p id="weather-utrecht">Loading weather...</p>
+          <div class="grid grid-cols-2">
+            <div>
+              <label for="weather-apeldoorn" class="font-semibold"
+                >Apeldoorn</label
+              >
+              <p id="weather-apeldoorn" class="text-3xl">Loading...</p>
+              <p id="temp-apeldoorn">Loading weather...</p>
+            </div>
+            <div>
+              <label for="weather-utrecht" class="font-semibold"
+                >Utrecht</label
+              >
+              <p id="weather-utrecht" class="text-3xl">Loading...</p>
+              <p id="temp-utrecht">Loading weather...</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>

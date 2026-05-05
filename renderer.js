@@ -89,7 +89,10 @@ fetch(
     const weatherTextApeldoorn = getWeatherText(codeApeldoorn);
 
     document.getElementById("weather-apeldoorn").textContent =
-      `${tempApeldoorn}°C, wind ${windApeldoorn} km/h ${weatherTextApeldoorn}`;
+      `${weatherTextApeldoorn}`;
+
+    document.getElementById("temp-apeldoorn").textContent =
+      `${tempApeldoorn} C°`
   });
 
 // Weather Utrecht
@@ -109,5 +112,8 @@ fetch(
     const weatherTextUtrecht = getWeatherText(codeUtrecht);
 
     document.getElementById("weather-utrecht").textContent =
-      `${tempUtrecht}°C, wind ${windUtrecht} km/h, ${weatherTextUtrecht}`;
+      `${weatherTextUtrecht}`;
+      
+    document.getElementById("temp-utrecht").textContent = 
+    `${tempUtrecht} C°`
   });
