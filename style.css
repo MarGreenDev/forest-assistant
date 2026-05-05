@@ -79,3 +79,14 @@ button {
   white-space: pre-line;
   line-height: 2.4;
 }
+
+#weather-container {
+  background-image: url(img/weather-section.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#quick-links-section {
+  background-image: url(img/quicklinks-section.png);
+  height: 176px;
+}
