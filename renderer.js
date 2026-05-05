@@ -48,12 +48,10 @@ function updateClock() {
 updateClock(); //run once
 setInterval(updateClock, 1000); // update every second
 
-// typing counter
+//  froggy jump
 
 let count = 0;
-window.addEventListener("keydown", () => {
-    count++;
-    document.getElementById("counter").textContent = count;
+document.getElementById("frog").addEventListener("click", () => {      
 
     frog.classList.add("jump");
 
