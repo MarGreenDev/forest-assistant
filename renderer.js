@@ -2,7 +2,13 @@ const { shell, ipcRenderer } = require("electron");
 const fs = require("fs");
 const { json } = require("stream/consumers");
 
-const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+const path = require('path');
+
+const configPath = path.join(__dirname, 'config.json');
+
+const config = JSON.parse(
+  fs.readFileSync(configPath, 'utf-8')
+);
 
 // minimize and close buttons
 
