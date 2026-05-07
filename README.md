@@ -19,7 +19,7 @@ A cozy pixel art desktop assistant built with Electron.
 ## Built with
 
 - Electron
-- HTLM / CSS / JavaScript
+- HTML / CSS / JavaScript
 - Some styling done with Tailwind
 
 ## Future ideas
@@ -27,4 +27,4 @@ A cozy pixel art desktop assistant built with Electron.
 - Customizable themes/animals
 - Discord Rich Presence
 - More widgets (Commute / tasks)
-- Ambient sounds corresponding with weather
+- Ambient sounds corresponding to current weather
